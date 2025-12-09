@@ -7,6 +7,7 @@ import com.palmergames.bukkit.towny.object.Town;
 import com.orbismc.townyPolitics.TownyPolitics;
 import com.orbismc.townyPolitics.utils.DelegateLogger;
 import net.kyori.adventure.text.Component;
+import net.kyori.adventure.text.format.NamedTextColor;
 
 /**
  * Base class for all status screen components
@@ -34,15 +35,15 @@ public abstract class StatusComponent {
     /**
      * Get the color for a modifier value (green if positive, red if negative)
      */
-    protected com.palmergames.adventure.text.format.NamedTextColor getTextColorForValue(double value, boolean isSpendingMod) {
+    protected NamedTextColor getTextColorForValue(double value, boolean isSpendingMod) {
         if (isSpendingMod) {
             // For spending modifiers, positive values are bad (more expensive)
-            if (value > 0) return com.palmergames.adventure.text.format.NamedTextColor.RED;
-            return com.palmergames.adventure.text.format.NamedTextColor.GREEN;
+            if (value > 0) return NamedTextColor.RED;
+            return NamedTextColor.GREEN;
         } else {
             // For all other modifiers, negative values are bad
-            if (value < 0) return com.palmergames.adventure.text.format.NamedTextColor.RED;
-            return com.palmergames.adventure.text.format.NamedTextColor.GREEN;
+            if (value < 0) return NamedTextColor.RED;
+            return NamedTextColor.GREEN;
         }
     }
 
