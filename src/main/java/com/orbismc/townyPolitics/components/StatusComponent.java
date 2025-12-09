@@ -6,7 +6,7 @@ import com.palmergames.bukkit.towny.object.Nation;
 import com.palmergames.bukkit.towny.object.Town;
 import com.orbismc.townyPolitics.TownyPolitics;
 import com.orbismc.townyPolitics.utils.DelegateLogger;
-import com.palmergames.adventure.text.Component;
+import net.kyori.adventure.text.Component;
 
 /**
  * Base class for all status screen components

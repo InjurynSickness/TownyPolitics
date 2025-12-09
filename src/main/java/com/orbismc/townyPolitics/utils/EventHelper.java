@@ -1,8 +1,8 @@
 package com.orbismc.townyPolitics.utils;
 
-import com.palmergames.adventure.text.Component;
-import com.palmergames.adventure.text.format.NamedTextColor;
-import com.palmergames.adventure.text.event.HoverEvent;
+import net.kyori.adventure.text.Component;
+import net.kyori.adventure.text.format.NamedTextColor;
+import net.kyori.adventure.text.event.HoverEvent;
 import com.palmergames.bukkit.towny.event.statusscreen.StatusScreenEvent;
 
 public class EventHelper {

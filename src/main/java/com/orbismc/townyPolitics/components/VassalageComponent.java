@@ -5,9 +5,9 @@ import com.orbismc.townyPolitics.managers.VassalageManager;
 import com.orbismc.townyPolitics.vassalage.VassalageRelationship;
 import com.palmergames.bukkit.towny.event.statusscreen.NationStatusScreenEvent;
 import com.palmergames.bukkit.towny.object.Nation;
-import com.palmergames.adventure.text.Component;
-import com.palmergames.adventure.text.format.NamedTextColor;
-import com.palmergames.adventure.text.event.HoverEvent;
+import net.kyori.adventure.text.Component;
+import net.kyori.adventure.text.format.NamedTextColor;
+import net.kyori.adventure.text.event.HoverEvent;
 
 import java.util.List;
 

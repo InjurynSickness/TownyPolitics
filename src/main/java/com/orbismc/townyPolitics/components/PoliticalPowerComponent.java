@@ -6,9 +6,9 @@ import com.palmergames.bukkit.towny.object.Nation;
 import com.palmergames.bukkit.towny.object.Town;
 import com.palmergames.bukkit.towny.object.metadata.StringDataField;
 import com.orbismc.townyPolitics.TownyPolitics;
-import com.palmergames.adventure.text.Component;
-import com.palmergames.adventure.text.format.NamedTextColor;
-import com.palmergames.adventure.text.event.HoverEvent;
+import net.kyori.adventure.text.Component;
+import net.kyori.adventure.text.format.NamedTextColor;
+import net.kyori.adventure.text.event.HoverEvent;
 
 /**
  * Component that displays Authority information on status screens
