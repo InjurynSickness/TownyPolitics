@@ -1,7 +1,7 @@
 name: TownyPolitics
 version: 1.0.0
 main: com.orbismc.townyPolitics.TownyPolitics
-api-version: 1.16
+api-version: '1.21'
 depend: [Towny, Vault]
 description: A political addon for Towny with government types and political power
 author: InjurynSickness
