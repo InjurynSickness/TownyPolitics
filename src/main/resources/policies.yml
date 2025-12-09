@@ -1,0 +1,181 @@
+# TownyPolitics Policies Configuration
+
+policies:
+  # Cooldown between policy changes (in days)
+  cooldown_days: 3
+
+  # Available policies
+  available:
+    # Economic Policies
+    progressive_taxation:
+      name: "Progressive Taxation"
+      description: "Implement progressive tax rates to generate more revenue but with increased bureaucracy."
+      cost: 15.0
+      duration: 14
+      type: ECONOMIC
+      allowed_governments:
+        - FEUDAL
+        - ABSOLUTE_MONARCHY
+      min_authority: 25.0
+      max_decadence: 75.0
+      effects:
+        tax: 1.15                    # +15% max taxation
+        decadence_gain: 1.02         # +2% decadence gain
+        spending: 1.05               # +5% spending costs
+
+    trade_subsidies:
+      name: "Trade Subsidies"
+      description: "Subsidize merchants and trade routes to boost the economy at the cost of increased decadence."
+      cost: 20.0
+      duration: 14
+      type: ECONOMIC
+      allowed_governments: []        # All government types allowed
+      min_authority: 30.0
+      max_decadence: 80.0
+      effects:
+        trade: 1.20                  # +20% trade income
+        economy: 1.10                # +10% economy boost
+        decadence_gain: 1.10         # +10% decadence gain
+
+    public_works:
+      name: "Public Works Program"
+      description: "Invest in infrastructure and public projects to reduce long-term decadence."
+      cost: 35.0
+      duration: 30
+      type: ECONOMIC
+      allowed_governments: []        # All government types allowed
+      min_authority: 50.0
+      max_decadence: 90.0
+      effects:
+        spending: 1.15               # +15% spending costs
+        decadence_gain: 0.80         # -20% decadence gain
+
+    # Political Policies
+    propaganda_campaign:
+      name: "Royal Decree Campaign"
+      description: "Launch an extensive propaganda campaign to boost authority gain at the cost of increased decadence."
+      cost: 25.0
+      duration: 14
+      type: POLITICAL
+      allowed_governments:
+        - ABSOLUTE_MONARCHY
+        - THEOCRACY
+      min_authority: 30.0
+      max_decadence: 80.0
+      effects:
+        authority_gain: 1.25         # +25% authority gain
+        decadence_gain: 1.15         # +15% decadence gain
+
+    transparency_initiative:
+      name: "Administrative Reform"
+      description: "Implement administrative reforms to reduce decadence at the cost of maximum authority."
+      cost: 20.0
+      duration: 14
+      type: POLITICAL
+      allowed_governments:
+        - FEUDAL
+        - THEOCRACY
+      min_authority: 25.0
+      max_decadence: 100.0
+      effects:
+        decadence_gain: 0.70         # -30% decadence gain
+        max_authority: 0.90          # -10% max authority
+
+    foreign_aid:
+      name: "Foreign Aid Program"
+      description: "Provide aid to other nations to improve diplomatic relations at the cost of resources."
+      cost: 25.0
+      duration: 14
+      type: POLITICAL
+      allowed_governments: []        # All government types allowed
+      min_authority: 40.0
+      max_decadence: 70.0
+      effects:
+        resource_output: 0.90        # -10% resource output
+        decadence_gain: 0.90         # -10% decadence gain
+
+    # Military Policies
+    conscription:
+      name: "Military Conscription"
+      description: "Implement mandatory military service to improve defense but increase decadence."
+      cost: 30.0
+      duration: 14
+      type: MILITARY
+      allowed_governments:
+        - FEUDAL
+        - ABSOLUTE_MONARCHY
+      min_authority: 40.0
+      max_decadence: 80.0
+      effects:
+        decadence_gain: 1.10         # +10% decadence gain
+        # Military strength would be handled in a future update
+
+    defense_pact:
+      name: "Defense Alliance"
+      description: "Form a defensive alliance with another nation, requiring ongoing authority maintenance."
+      cost: 40.0
+      duration: 30
+      type: MILITARY
+      allowed_governments: []        # All government types allowed
+      min_authority: 75.0
+      max_decadence: 60.0
+      effects:
+        authority_gain: 0.90         # -10% authority gain
+        # Alliance mechanics would be handled in a future update
+
+    war_economy:
+      name: "War Economy"
+      description: "Convert the economy to a war footing, boosting resource production at the cost of higher taxes."
+      cost: 45.0
+      duration: 14
+      type: MILITARY
+      allowed_governments: []        # All government types allowed
+      min_authority: 60.0
+      max_decadence: 70.0
+      effects:
+        resource_output: 1.20        # +20% resource output
+        tax: 1.10                    # +10% taxation
+
+    # Social Policies
+    education_reform:
+      name: "Education Reform"
+      description: "Invest in education to gradually reduce decadence over time."
+      cost: 25.0
+      duration: 30
+      type: SOCIAL
+      allowed_governments:
+        - FEUDAL
+        - THEOCRACY
+      min_authority: 35.0
+      max_decadence: 90.0
+      effects:
+        decadence_gain: 0.85         # -15% decadence gain
+        spending: 1.10               # +10% spending costs
+
+    religious_mandate:
+      name: "Religious Mandate"
+      description: "Establish a state religion to unify the populace but increase decadence."
+      cost: 20.0
+      duration: -1                   # Permanent policy
+      type: SOCIAL
+      allowed_governments:
+        - THEOCRACY
+        - ABSOLUTE_MONARCHY
+      min_authority: 40.0
+      max_decadence: 80.0
+      effects:
+        decadence_gain: 1.05         # +5% decadence gain
+        authority_gain: 1.10         # +10% authority gain
+
+    cultural_exchange:
+      name: "Cultural Exchange Program"
+      description: "Promote cultural exchange to reduce foreign nation penalties."
+      cost: 15.0
+      duration: 14
+      type: SOCIAL
+      allowed_governments: []        # All government types allowed
+      min_authority: 20.0
+      max_decadence: 70.0
+      effects:
+        decadence_gain: 0.95         # -5% decadence gain
+        # Foreign relations would be handled in a future update

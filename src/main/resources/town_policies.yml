@@ -1,0 +1,169 @@
+# TownyPolitics Town Policies Configuration
+
+policies:
+  # Town-specific cooldown (in days)
+  cooldown_days: 2
+
+  # Available town policies
+  available:
+    # Urban Development Policies
+    urban_planning:
+      name: "Urban Planning Initiative"
+      description: "Implement urban planning to reduce plot costs and town upkeep."
+      cost: 5.0
+      duration: 14
+      type: URBAN
+      town_only: true
+      allowed_governments:
+        - REPUBLIC
+        - DIRECT_DEMOCRACY
+      min_political_power: 0.0
+      max_corruption: 70.0
+      effects:
+        plot_cost: 0.85           # -15% plot cost
+        upkeep: 0.90              # -10% town upkeep
+        plot_tax: 0.95            # -5% plot tax
+        town_block_cost: 0.90     # -10% town block cost
+
+    town_expansion:
+      name: "Town Expansion Program"
+      description: "Focus resources on town expansion to increase resident capacity and claim more town blocks."
+      cost: 7.0
+      duration: 7
+      type: URBAN
+      town_only: true
+      allowed_governments: []     # All government types allowed
+      min_political_power: 0.0
+      max_corruption: 60.0
+      effects:
+        resident_capacity: 1.15   # +15% resident capacity
+        town_block_bonus: 1.10    # +10% town block bonus
+        upkeep: 1.05              # +5% town upkeep (drawback)
+
+    economic_stimulus:
+      name: "Local Economic Stimulus"
+      description: "Stimulate the local economy with tax incentives and trade bonuses."
+      cost: 5.0
+      duration: 7
+      type: ECONOMIC
+      town_only: true
+      allowed_governments: []     # All government types allowed
+      min_political_power: 0.0
+      max_corruption: 75.0
+      effects:
+        trade: 1.10               # +10% trade income
+        tax: 0.90                 # -10% taxes
+        plot_tax: 0.85            # -15% plot tax
+        corruption_gain: 1.05     # +5% corruption gain (drawback)
+
+    anti_corruption_initiative:
+      name: "Town Anti-Corruption Initiative"
+      description: "Implement anti-corruption measures at the town level to reduce corruption."
+      cost: 8.0
+      duration: 14
+      type: POLITICAL
+      town_only: true
+      allowed_governments:
+        - DIRECT_DEMOCRACY
+        - REPUBLIC
+      min_political_power: 0.0
+      max_corruption: 100.0
+      effects:
+        corruption_gain: 0.75     # -25% corruption gain
+        upkeep: 1.10              # +10% town upkeep (drawback)
+
+    infrastructure_development:
+      name: "Infrastructure Development"
+      description: "Invest in town infrastructure to reduce long-term costs but with initial investment."
+      cost: 10.0
+      duration: 30
+      type: URBAN
+      town_only: true
+      allowed_governments: []     # All government types allowed
+      min_political_power: 0.0
+      max_corruption: 50.0
+      effects:
+        upkeep: 0.80              # -20% town upkeep
+        town_block_cost: 0.85     # -15% town block cost
+        plot_cost: 0.90           # -10% plot cost
+        corruption_gain: 0.95     # -5% corruption gain
+
+    housing_program:
+      name: "Affordable Housing Program"
+      description: "Implement housing regulations to decrease plot costs but with lower tax income."
+      cost: 6.0
+      duration: 14
+      type: SOCIAL
+      town_only: true
+      allowed_governments:
+        - DIRECT_DEMOCRACY
+        - REPUBLIC
+      min_political_power: 0.0
+      max_corruption: 60.0
+      effects:
+        plot_cost: 0.70           # -30% plot cost
+        resident_capacity: 1.10   # +10% resident capacity
+        plot_tax: 0.80            # -20% plot tax (drawback)
+
+    industrial_focus:
+      name: "Industrial Development Focus"
+      description: "Focus on industrial development to boost economy but at environmental cost."
+      cost: 8.0
+      duration: 14
+      type: ECONOMIC
+      town_only: true
+      allowed_governments:
+        - AUTOCRACY
+        - OLIGARCHY
+      min_political_power: 0.0
+      max_corruption: 80.0
+      effects:
+        trade: 1.15               # +15% trade income
+        tax: 1.10                 # +10% tax income
+        corruption_gain: 1.10     # +10% corruption gain (drawback)
+
+    tourism_promotion:
+      name: "Tourism Promotion Program"
+      description: "Promote the town as a tourist destination, boosting economy but increasing costs."
+      cost: 5.0
+      duration: 7
+      type: ECONOMIC
+      town_only: true
+      allowed_governments: []     # All government types allowed
+      min_political_power: 0.0
+      max_corruption: 70.0
+      effects:
+        trade: 1.20               # +20% trade income
+        upkeep: 1.15              # +15% upkeep (drawback)
+        town_block_cost: 1.10     # +10% town block cost (drawback)
+
+    defensive_fortifications:
+      name: "Town Defensive Fortifications"
+      description: "Strengthen town defenses, increasing the safety but at higher upkeep costs."
+      cost: 12.0
+      duration: 30
+      type: MILITARY
+      town_only: true
+      allowed_governments:
+        - AUTOCRACY
+      min_political_power: 0.0
+      max_corruption: 75.0
+      effects:
+        upkeep: 1.20              # +20% town upkeep (drawback)
+        # Military strength to be implemented in future update
+
+    town_modernization:
+      name: "Town Modernization Project"
+      description: "Invest in modernizing town infrastructure for long-term benefits."
+      cost: 15.0
+      duration: -1                # Permanent policy
+      type: URBAN
+      town_only: true
+      allowed_governments: []     # All government types allowed
+      min_political_power: 0.0
+      max_corruption: 50.0
+      effects:
+        upkeep: 0.85              # -15% town upkeep
+        plot_cost: 0.85           # -15% plot cost
+        town_block_cost: 0.90     # -10% town block cost
+        corruption_gain: 0.95     # -5% corruption gain

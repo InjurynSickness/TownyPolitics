@@ -1,0 +1,130 @@
+# TownyPolitics Configuration
+
+# Debug Settings
+debug:
+  enabled: false
+  log_to_file: true
+  file_name: "debug.log"
+  log_level: INFO
+
+# Authority Settings (formerly political power)
+authority:
+  max_daily_gain: 5.0
+  min_daily_gain: 1.0
+  base_gain: 1.0
+
+# Government Settings
+government:
+  change_cooldown: 30
+  switch_time: 7
+
+# Decadence Settings (formerly corruption)
+decadence:
+  base_daily_gain: 0.5
+  authority_cost_rate: 2.0
+  thresholds:
+    low: 25.0
+    medium: 50.0
+    high: 75.0
+    critical: 90.0
+  embezzlement:
+    low: 0.05
+    medium: 0.15
+    high: 0.30
+    critical: 0.60
+  notifications:
+    embezzlement_message: true
+  effects:
+    taxation:
+      low: 1.05
+      medium: 1.10
+      high: 1.15
+      critical: 1.20
+    authority:
+      low: 1.0
+      medium: 0.9
+      high: 0.75
+      critical: 0.5
+    resources:
+      low: 0.95
+      medium: 0.85
+      high: 0.75
+      critical: 0.6
+    spending:
+      low: 1.1
+      medium: 1.2
+      high: 1.3
+      critical: 1.5
+  authority_penalties:
+    high: 0.025
+    critical: 0.05
+
+# Town Decadence Settings (formerly town corruption)
+town_decadence:
+  base_daily_gain: 0.4
+  thresholds:
+    low: 25.0
+    medium: 50.0
+    high: 75.0
+    critical: 90.0
+  effects:
+    taxation:
+      low: 0.95
+      medium: 0.90
+      high: 0.80
+      critical: 0.70
+    trade:
+      low: 0.95
+      medium: 0.90
+      high: 0.80
+      critical: 0.70
+
+# Town Government Settings
+town_government:
+  change_cooldown: 15
+
+# Town Authority Settings (formerly town political power)
+town_authority:
+  base_gain: 0.5
+  max_daily_gain: 3.0
+  min_daily_gain: 0.5
+  nation_bonus: 0.1
+
+# Policy Settings
+policies:
+  cooldown_days: 3
+
+# Vassalage Settings
+vassalage:
+  min_liege_authority: 50.0          # Minimum authority to become a liege
+  authority_maintenance_per_vassal: 2.0  # Authority cost per vassal per day
+  vassal_break_cost: 25.0            # Authority cost for vassals to break free
+  offer_expiry_hours: 24             # How long offers last
+  breakaway_grace_period_days: 7     # Grace period after maintenance failure
+  max_tribute_rate: 0.10             # Maximum tribute rate (10%)
+
+  # Tribute collection settings
+  tribute:
+    enabled: true                    # Enable tribute collection
+    min_transaction_amount: 0.01     # Minimum transaction amount to trigger tribute
+    notify_overlord: true           # Notify overlord when tribute is received
+    notify_vassal: true             # Notify vassal when tribute is paid
+
+  # Debug settings for vassalage
+  debug:
+    log_tribute_payments: true      # Log all tribute payments
+    log_transaction_processing: false  # Log transaction processing details
+    log_relationship_changes: true    # Log vassalage relationship changestax_collection: true    # Process tribute on tax collection
+    process_trade_income: true      # Process tribute on trade income
+    process_all_deposits: true      # Process tribute on all deposits
+
+# Database Settings
+database:
+  host: ash-pg-1033.bloom.host
+  port: 3306
+  database: s67589_townypolitics
+  username: u67589_JhLZ5nu9LY
+  password: 7CY0iG9VBTVW7hfn051k1qwk
+  prefix: tp_
+  connection_pool_size: 10
+  max_lifetime: 1800000
